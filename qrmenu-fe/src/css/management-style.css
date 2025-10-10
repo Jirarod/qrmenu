@@ -1,0 +1,72 @@
+/* Import Sarabun font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap');
+
+:root {
+	--color-bg: #d8e2dc;
+	--color-card: #ffffff;
+	--color-accent: #ffcad4;
+	--color-accent2: #f4acb7;
+	--color-text: #9d8189;
+	--font-main: 'Sarabun', sans-serif;
+}
+
+body,
+.login-bg,
+.login-card,
+.login-title,
+.login-label,
+.login-input,
+.login-btn {
+	font-family: var(--font-main);
+}
+
+.login-bg {
+	min-height: 100vh;
+	background: linear-gradient(135deg, var(--color-bg), var(--color-accent));
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.login-card {
+	background: var(--color-card);
+	border-radius: 18px;
+	box-shadow: 0 4px 24px rgba(157, 129, 137, 0.12);
+	padding: 2rem;
+	width: 350px;
+}
+
+.login-title {
+	color: var(--color-text);
+	font-weight: 700;
+	margin-bottom: 1.5rem;
+	text-align: center;
+}
+
+.login-label {
+	color: var(--color-text);
+	font-weight: 500;
+}
+
+.login-input {
+	border-radius: 10px;
+	border: 1px solid var(--color-accent2);
+	margin-bottom: 1rem;
+}
+
+.login-btn {
+	background: linear-gradient(90deg, var(--color-accent2), var(--color-accent));
+	color: var(--color-card);
+	font-weight: 600;
+	border-radius: 10px;
+	border: none;
+	box-shadow: 0 2px 8px rgba(244, 172, 183, 0.15);
+	width: 100%;
+	padding: 0.5rem 0;
+	margin-top: 0.5rem;
+	transition: background 0.2s;
+}
+
+.login-btn:hover {
+	background: linear-gradient(90deg, var(--color-accent), var(--color-accent2));
+}
