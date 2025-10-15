@@ -1,3 +1,19 @@
 /qrmenu-fe/.react-router
 /qrmenu-fe/node_modules
+/# Build output
+/qrmenu-fe/dist
+/qrmenu-fe/.vite
+
+# Node.js dependencies
+/qrmenu-fe/node_modules
+
+# Environment files
 /qrmenu-fe/.env
+
+# React Router dev files
+/qrmenu-fe/.react-router
+
+# OS/Editor files
+/qrmenu-fe/.DS_Store
+/qrmenu-fe/Thumbs.db
+/qrmenu-fe/.vscode/.env
