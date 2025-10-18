@@ -1,18 +1,41 @@
+@import "tailwindcss";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
-  --font-sans: 'Sarabun', ui-sans-serif, system-ui, -apple-system, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial;
+	--font-sans: 'Sarabun', ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+		Roboto, "Helvetica Neue", Arial;
+
+	/* Site palette (ColorHunt): https://colorhunt.co/palette/e3fdfdcbf1f5a6e3e971c9ce */
+	--color-1: #f0f9f9;
+	/* very pale aqua - background */
+	--color-2: #cbf1f5;
+	/* pale aqua - surfaces */
+	--color-3: #a6e3e9;
+	/* soft cyan - accents */
+	--color-4: #71c9ce;
+	/* teal-ish accent */
+	--color-5: #0e1c36;
+	/* deep navy - text / primary (kept for contrast) */
+
+	/* semantic aliases */
+	--bg: var(--color-1);
+	--surface: var(--color-2);
+	--accent-1: var(--color-3);
+	--accent-2: var(--color-4);
+	--text-primary: var(--color-5);
 }
 
 html,
 body,
 #root {
-  height: 100%;
+	height: 100%;
 }
 
 body {
-  font-family: var(--font-sans);
+	font-family: var(--font-sans);
+	background-color: var(--bg);
+	color: var(--text-primary);
 }

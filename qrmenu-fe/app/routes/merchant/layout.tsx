@@ -1,20 +1,26 @@
-import { Link, Outlet } from "react-router";
+import { Outlet } from "react-router";
+import { useState } from "react";
+import NavbarMerchant from "../../components/navbar-merchant";
+import SidebarMerchant from "../../components/sidebar-merchant";
+import  "../../css/merchant.css";
+
+// export const links: any = () => [{ rel: "stylesheet", href: merchantStyles }];
 
 export default function MerchantLayout() {
-	return (
-		<main className="p-4 container mx-auto">
-			<header className="mb-4">
-				<h1 className="text-2xl font-bold">Merchant Management</h1>
-				<nav className="mt-2 space-x-4">
-					<Link to="/merchant">Home</Link>
-					<Link to="/merchant/qr-create">Create QR</Link>
-					<Link to="/merchant/menu-management">Menu Management</Link>
-				</nav>
-			</header>
+	const [open, setOpen] = useState(true);
+	console.log("MerchantLayout render, sidebar open:", open);
 
-			<section>
-				<Outlet />
-			</section>
-		</main>
+	return (
+			<div className="merchant-shell md:flex">
+				<SidebarMerchant open={open} onClose={() => setOpen(false)} />
+				<div className={`flex-1 min-h-screen ${open ? 'md:ml-64' : ''}`}>
+					<NavbarMerchant onToggle={() => setOpen((v) => !v)} notifications={3} />
+					<main className="p-4 container mx-auto">
+					<section>
+						<Outlet />
+					</section>
+				</main>
+			</div>
+		</div>
 	);
 }

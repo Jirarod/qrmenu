@@ -4,7 +4,7 @@ import { type RouteConfig, index, route } from "@react-router/dev/routes";
 	index("routes/home.tsx"),
 	// merchant management section: layout + nested routes
 	route("merchant", "routes/merchant/layout.tsx", [
-		index("routes/merchant/home.tsx"),
+		index("routes/merchant/dashboard.tsx"),
 		route("qr-create", "routes/merchant/qr-create.tsx"),
 		route("menu-management", "routes/merchant/menu-management.tsx"),
 	]),
