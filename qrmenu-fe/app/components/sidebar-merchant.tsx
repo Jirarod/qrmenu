@@ -13,7 +13,7 @@ export default function SidebarMerchant({open,onClose,}: {open: boolean; onClose
 			</div>
 			<hr className="hr-side-name" />
 			<nav className="p-4 space-y-1">
-				<NavLink to="/merchant" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`} onClick={onClose}>
+				<NavLink to="/merchant" end className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`} onClick={onClose}>
 					Dashboard
 				</NavLink>
 

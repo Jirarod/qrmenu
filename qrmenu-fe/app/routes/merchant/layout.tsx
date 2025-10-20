@@ -12,7 +12,7 @@ export default function MerchantLayout() {
 
 	return (
 			<div className="merchant-shell md:flex">
-				<SidebarMerchant open={open} onClose={() => setOpen(false)} />
+				<SidebarMerchant open={open} onClose={() => setOpen(true)} />
 				<div className={`flex-1 min-h-screen ${open ? 'md:ml-64' : ''}`}>
 					<NavbarMerchant onToggle={() => setOpen((v) => !v)} notifications={3} />
 					<main className="p-4 container mx-auto">
