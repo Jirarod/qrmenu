@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { NavLink } from "react-router";
 
 export default function SidebarMerchant({open,onClose,}: {open: boolean; onClose: () => void;}) {
@@ -17,9 +18,8 @@ export default function SidebarMerchant({open,onClose,}: {open: boolean; onClose
 					Dashboard
 				</NavLink>
 
-				<NavLink to="/merchant/qr-create" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`} onClick={onClose}>
-					Create QR
-				</NavLink>
+                {/* QR menu group */}
+                <QrMenuGroup onClose={onClose} />
 
 				<NavLink to="/merchant/menu-management" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`} onClick={onClose}>
 					Menu Management
@@ -36,5 +36,32 @@ export default function SidebarMerchant({open,onClose,}: {open: boolean; onClose
 			<div className="merchant-sidebar-overlay fixed inset-0 bg-black/40 z-30 md:hidden" onClick={onClose} aria-hidden />
 		)}
 		</>
+	);
+}
+
+function QrMenuGroup({ onClose }: { onClose: () => void }) {
+	const [open, setOpen] = useState(true);
+	return (
+		<div>
+			<button
+				type="button"
+				className="w-full text-left nav-item flex items-center justify-between"
+				onClick={() => setOpen((v) => !v)}
+			>
+				<span>QR Menu</span>
+				<span className="ml-2">{open ? '▾' : '▸'}</span>
+			</button>
+
+			{open && (
+				<div className="pl-3 mt-1 space-y-1">
+					<NavLink to="/merchant/qr-create" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`} onClick={onClose}>
+						Create QR
+					</NavLink>
+					<NavLink to="/merchant/qr-list" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`} onClick={onClose}>
+						QR List
+					</NavLink>
+				</div>
+			)}
+		</div>
 	);
 }

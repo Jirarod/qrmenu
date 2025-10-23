@@ -3,6 +3,20 @@
 @tailwind components;
 @tailwind utilities;
 
+/* src/index.css */
+@layer utilities {
+
+	.no-spinner::-webkit-outer-spin-button,
+	.no-spinner::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	.no-spinner {
+		-moz-appearance: textfield;
+	}
+}
+
 
 :root {
 	--font-sans: 'Sarabun', ui-sans-serif, system-ui, -apple-system, "Segoe UI",
